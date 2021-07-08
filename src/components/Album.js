@@ -53,24 +53,27 @@ export class Album extends Component {
 
     render() {
         return (
-            <div className="row">
-            <div className="col-12 col-sm-3"></div>
-            <div className="col-12 col-sm-6 mt-5">
-               <Form>
-      <FormGroup>
-        <Label for="exampleEmail">Album ID</Label>
-        <Input type="text" name="album_id" id="albumId" placeholder="search by  album id" value={this.state.album} onChange={this.HandleChange} onFocus={this.HandleFocus} />
-      </FormGroup>
-      <FormGroup>
-      <button type="button" className="btn btn-primary float-right" onClick = {this.HandleSubmit}>Get Album Photos By Id</button>
-      </FormGroup>
-      </Form>
-      </div>
-      <div className="col-12 col-sm-3"></div>
+
+<div class="topnav">
+<a class="active" href="#">GET ALBUM PHOTO BY ID</a>
+
+<div class="search-container">
+  <form>
+ 
+        
+        <Input type="text" name="album_id" id="albumId" placeholder="Enter the Album ID" value={this.state.album} onChange={this.HandleChange} onFocus={this.HandleFocus} />
       
-          <RenderAlbum albums ={this.state.albumdata} errorMessage = {this.state.errorMessage}></RenderAlbum>
       
-            </div>
+      <button type="button"  onClick = {this.HandleSubmit}>Get Album Photos By Id</button>
+      
+  </form>
+  <br></br>
+  <RenderAlbum albums ={this.state.albumdata} errorMessage = {this.state.errorMessage}></RenderAlbum>
+</div>
+</div>     
+                
+
+
         )
     }
 }
