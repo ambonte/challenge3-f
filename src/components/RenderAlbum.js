@@ -19,6 +19,7 @@ export class RenderAlbum extends Component {
                  <a><img src={album.thumbnailUrl}></img></a>
                  <p>{album.title}</p>
              </div>
+             
             );
         });
         return (

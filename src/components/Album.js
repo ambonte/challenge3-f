@@ -55,22 +55,28 @@ export class Album extends Component {
         return (
 
 <div class="topnav">
-<a class="active" href="#">GET ALBUM PHOTO BY ID</a>
+
 
 <div class="search-container">
-  <form>
- 
-        
-        <Input type="text" name="album_id" id="albumId" placeholder="Enter the Album ID" value={this.state.album} onChange={this.HandleChange} onFocus={this.HandleFocus} />
-      
-      
-      <button type="button"  onClick = {this.HandleSubmit}>Get Album Photos By Id</button>
-      
-  </form>
-  <br></br>
+<br></br>
+<h2>ALBUMS</h2>
+
+<p>On this web page, you can get album photos by their ID by inputing the album Id in the search box below.</p>
+<form class="example" action="/action_page.php">
+<Input type="text" name="album_id" id="albumId" placeholder="Enter the Album ID" value={this.state.album} onChange={this.HandleChange} onFocus={this.HandleFocus} />
+  <button type="button"  onClick = {this.HandleSubmit}><i class="fa fa-search"></i></button>
+</form>
+
+
+
+
+
+
   <RenderAlbum albums ={this.state.albumdata} errorMessage = {this.state.errorMessage}></RenderAlbum>
+
+</div>  
 </div>
-</div>     
+ 
                 
 
 
