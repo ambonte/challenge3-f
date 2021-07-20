@@ -26,7 +26,7 @@ export class Album extends Component {
         
       HandleSubmit = (event) => {
           event.preventDefault();
-          fetch(`https://jsonplaceholder.typicode.com/albums/${this.state.album}/photos`)
+          fetch(`https://challengethree.herokuapp.com/albums/${this.state.album}/photos`)
                 .then(response => {
                     if(response.ok){
                         return response.json();
@@ -34,7 +34,8 @@ export class Album extends Component {
                     throw response
                 })
                 .then(data  =>this.setState({
-                    albumdata: data,
+                    
+                    albumdata:data.formatedPhotos,
                     errorMessage: ''
                 }))
                 .catch(error => this.setState({
